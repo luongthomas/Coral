@@ -1,0 +1,6 @@
+framework module Pods_Coral {
+  umbrella header "Pods-Coral-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -12,6 +12,7 @@
 		24280E251F9C1EFA00E48D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24280E231F9C1EFA00E48D96 /* Main.storyboard */; };
 		24280E271F9C1EFA00E48D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24280E261F9C1EFA00E48D96 /* Assets.xcassets */; };
 		24280E2A1F9C1EFA00E48D96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24280E281F9C1EFA00E48D96 /* LaunchScreen.storyboard */; };
+		80E80C27F895D06BCD58FC35 /* Pods_Coral.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1DE945DF4ADF6FDC027CC5 /* Pods_Coral.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		24280E261F9C1EFA00E48D96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24280E291F9C1EFA00E48D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24280E2B1F9C1EFA00E48D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D8F4F8A484C7E12E71C48F6 /* Pods-Coral.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coral.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coral/Pods-Coral.release.xcconfig"; sourceTree = "<group>"; };
+		7E1DE945DF4ADF6FDC027CC5 /* Pods_Coral.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coral.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6EBAB069F9DE468F9BA13F /* Pods-Coral.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coral.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coral/Pods-Coral.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E80C27F895D06BCD58FC35 /* Pods_Coral.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01F7F1694A12B76924C1F6FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E1DE945DF4ADF6FDC027CC5 /* Pods_Coral.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24280E131F9C1EFA00E48D96 = {
 			isa = PBXGroup;
 			children = (
 				24280E1E1F9C1EFA00E48D96 /* Coral */,
 				24280E1D1F9C1EFA00E48D96 /* Products */,
+				95BE49FA761BF16B62511455 /* Pods */,
+				01F7F1694A12B76924C1F6FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = Coral;
 			sourceTree = "<group>";
 		};
+		95BE49FA761BF16B62511455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC6EBAB069F9DE468F9BA13F /* Pods-Coral.debug.xcconfig */,
+				2D8F4F8A484C7E12E71C48F6 /* Pods-Coral.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24280E2E1F9C1EFA00E48D96 /* Build configuration list for PBXNativeTarget "Coral" */;
 			buildPhases = (
+				B921B4B9D1DC93C51BE0C12A /* [CP] Check Pods Manifest.lock */,
 				24280E181F9C1EFA00E48D96 /* Sources */,
 				24280E191F9C1EFA00E48D96 /* Frameworks */,
 				24280E1A1F9C1EFA00E48D96 /* Resources */,
+				E693C2F825BCB484D5F2D0E1 /* [CP] Embed Pods Frameworks */,
+				E6779AFCC780CB607DA13DBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B921B4B9D1DC93C51BE0C12A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coral-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6779AFCC780CB607DA13DBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coral/Pods-Coral-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E693C2F825BCB484D5F2D0E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Coral/Pods-Coral-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coral/Pods-Coral-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		24280E181F9C1EFA00E48D96 /* Sources */ = {
@@ -272,6 +359,7 @@
 		};
 		24280E2F1F9C1EFA00E48D96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC6EBAB069F9DE468F9BA13F /* Pods-Coral.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +375,7 @@
 		};
 		24280E301F9C1EFA00E48D96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D8F4F8A484C7E12E71C48F6 /* Pods-Coral.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
